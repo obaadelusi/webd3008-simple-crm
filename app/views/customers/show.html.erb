@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<div>
+  <%= link_to "Edit this customer", edit_customer_path(@customer) %> |
+  <%= link_to "Back to customers", customers_path %>
+</div>
+
+<div id="<%= dom_id @customer %>" class="card">
+  <div class="card-body">
+    <p>
+      <strong>Fullname:</strong>
+      <%= @customer.fullname %>
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <%= @customer.phone %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @customer.email %>
+    </p>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= @customer.notes %>
+    </p>
+  </div>
+
+
+  <% if @customer.image.present? %>
+  <%= image_tag @customer.image, :class => 'card-img' %>
+  <% end %>
+
+</div>
+
+<div>
+  <%= button_to "Destroy this customer", @customer, method: :delete %>
+</div>

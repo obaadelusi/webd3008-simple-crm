@@ -1,0 +1,33 @@
+<div id="<%= dom_id customer %>" class="card" style="width: 360px;">
+  <% if customer.image.present? %>
+  <div class="card-image">
+    <figure class="image">
+      <%= image_tag customer.image, :class => 'card-image-top' %>
+    </figure>
+  </div>
+  <% end %>
+
+  <div class="card-body">
+    <p>
+      <strong>Fullname:</strong>
+      <%= customer.fullname %>
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <%= customer.phone %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= customer.email %>
+    </p>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= customer.notes %>
+    </p>
+
+    <p><%= link_to "Show this customer", customer_path(customer) %></p>
+  </div>
+</div>
