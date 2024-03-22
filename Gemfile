@@ -73,5 +73,7 @@ end
 gem 'activeadmin'
 gem 'devise'
 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+
 # Use Sass to process CSS
 gem 'sassc-rails'

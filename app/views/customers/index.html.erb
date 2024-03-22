@@ -1,11 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div id="customers-index" class="position-relative">
+  <p style="color: green"><%= notice %></p>
 
-<h1>Customers</h1>
+  <h1>All Customers</h1>
 
-<%= link_to "Add new customer +", new_customer_path, :class => 'btn btn-light' %>
+  <%= link_to "+ Add new customer", new_customer_path, :class => 'btn btn-outline-secondary text-dark position-absolute top-0 end-0' %>
 
-<div id="customers" class="d-flex gap-2 flex-wrap">
-  <% @customers.each do |customer| %>
-  <%= render customer %>
-  <% end %>
+  <div class="my-3 d-flex gap-2">
+    <%= link_to "Customers in alphabetic order", alphabetized_path, :class => 'btn btn-link' %>
+    <%= link_to "Customers without email", missing_email_path, :class => 'btn btn-link' %>
+  </div>
+
+
+
+  <div id="customers" class="d-flex gap-2 flex-wrap justify-content-center">
+    <% @customers.each do |customer| %>
+    <%= render customer %>
+    <% end %>
+  </div>
 </div>

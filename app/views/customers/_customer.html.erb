@@ -1,11 +1,14 @@
-<div id="<%= dom_id customer %>" class="card" style="width: 360px;">
-  <% if customer.image.present? %>
+<div id="<%= dom_id customer %>" class="card" style="width: 300px;">
+
   <div class="card-image">
     <figure class="image">
+      <% if customer.image.present? %>
       <%= image_tag customer.image, :class => 'card-image-top' %>
+      <% else %>
+      <%= image_tag("empty_image.jpg") %>
+      <% end %>
     </figure>
   </div>
-  <% end %>
 
   <div class="card-body">
     <p>
@@ -23,10 +26,10 @@
       <%= customer.email %>
     </p>
 
-    <p>
+    <!-- <p>
       <strong>Notes:</strong>
-      <%= customer.notes %>
-    </p>
+      <%#= customer.notes %>
+    </p> -->
 
     <p><%= link_to "Show this customer", customer_path(customer) %></p>
   </div>

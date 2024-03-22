@@ -1,0 +1,17 @@
+<div id="customers-alphabetized" class="position-relative">
+    <h1>Customers <span class="text-primary">in alphabetic order</span></h1>
+    <!-- <p class="text-success"><em>A-Z</em></p> -->
+
+    <%= link_to "+ Add new customer", new_customer_path, :class => 'btn btn-outline-secondary text-dark position-absolute top-0 end-0' %>
+
+    <div class="my-3 d-flex gap-2">
+        <%= link_to "<- Back to All Customers", customers_path, :class => 'btn btn-link' %>
+        <%= link_to "Customers without email", missing_email_path, :class => 'btn btn-link' %>
+    </div>
+
+    <div id="customers" class="d-flex gap-2 flex-wrap">
+        <% @customers.each do |customer| %>
+        <%= render customer %>
+        <% end %>
+    </div>
+</div>
